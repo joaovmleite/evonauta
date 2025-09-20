@@ -1,0 +1,128 @@
+
+# Evonauta - Desafio Técnico Evolucional
+
+Este repositório contém a minha solução para o desafio técnico da Evolucional, desenvolvido com React e Vite. Aqui, compartilho as decisões técnicas, estrutura do projeto, principais funcionalidades e instruções para execução.
+
+## Sumário
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Principais Funcionalidades](#principais-funcionalidades)
+- [Decisões Técnicas](#decisões-técnicas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Validação e Segurança](#validação-e-segurança)
+- [Como Executar](#como-executar)
+- [Screenshots](#screenshots)
+- [Considerações Finais](#considerações-finais)
+
+---
+
+## Sobre o Projeto
+
+O objetivo deste projeto foi criar uma aplicação web para gestão de alunos, professores, matérias, séries e turmas, utilizando dados fornecidos em arquivos JSON. Busquei entregar uma solução funcional, clara e alinhada ao escopo do desafio, priorizando organização, eficiência e experiência do usuário.
+
+Desde o início, analisei cuidadosamente o arquivo de instruções e os dados, garantindo que cada funcionalidade implementada estivesse de acordo com o solicitado. Optei por React com Vite para obter performance, modularidade e facilidade de manutenção.
+
+## Principais Funcionalidades
+
+- **Centralização do estado com Context API:**
+	- Utilizei o Context API do React para compartilhar dados e funções entre todas as páginas, facilitando a manutenção e evitando duplicidade de lógica.
+- **Filtros dinâmicos e geração em massa:**
+	- Implementei filtros de série e turma, além da geração em massa de alunos, para agilizar a manipulação dos dados e simular cenários reais de uso.
+- **Visualização de dados com gráficos:**
+	- Na tela de alunos, exibo um gráfico de distribuição por série, facilitando a análise visual dos dados.
+- **Relacionamentos entre professores, matérias e turmas:**
+	- Permito visualizar e editar vínculos entre professores, matérias, séries e turmas, com interface clara e uso de modais para evitar navegação excessiva.
+- **Interface moderna e responsiva:**
+	- Toda a interface foi construída com UIKit, garantindo responsividade, visual limpo e alinhamento com o padrão institucional.
+
+## Decisões Técnicas
+
+- **Stack:** React + Vite, UIKit para UI, Chart.js para gráficos, React Router para navegação.
+- **Carregamento de dados:** Todos os dados são carregados via fetch dos arquivos JSON presentes em `public/data/`, centralizados no contexto global.
+- **Componentização:** Separei o código em componentes reutilizáveis, páginas e utilitários, facilitando manutenção e evolução.
+- **Validação e segurança:** Implementei validação de campos obrigatórios, sanitização de entradas (escape de HTML) e feedback imediato ao usuário.
+- **Responsividade:** Usei classes do UIKit e ajustes de layout para garantir boa visualização em diferentes tamanhos de tela.
+
+## Estrutura do Projeto
+
+```
+├── public/
+│   └── data/           # Arquivos JSON de dados (alunos, professores, etc)
+├── src/
+│   ├── assets/         # Assets estáticos (CSS, JS, imagens)
+│   ├── components/     # Componentes reutilizáveis (Navbar, Modal, etc)
+│   ├── context/        # Contexto global (AppContext)
+│   ├── pages/          # Páginas principais (Home, Alunos, Professores)
+│   ├── utils/          # Funções utilitárias (fetchJson, etc)
+│   ├── App.jsx         # Componente raiz
+│   └── main.jsx        # Ponto de entrada da aplicação
+├── index.html          # HTML principal, inclui UIKit e fontes
+├── package.json        # Dependências e scripts
+└── README.md           # Este arquivo
+```
+
+## Validação e Segurança
+
+- **Validação de campos obrigatórios:**
+	- Todos os formulários e campos editáveis impedem o envio de dados vazios ou inválidos.
+- **Sanitização contra XSS:**
+	- Todas as entradas do usuário são sanitizadas com escape de HTML antes de salvar ou exibir dados.
+- **Feedback imediato:**
+	- Mensagens de alerta e bloqueio de ações sempre que o usuário tenta inserir dados inválidos.
+- **Validação no fluxo de atualização do estado:**
+	- As validações são aplicadas diretamente nas funções de manipulação de estado, evitando inconsistências.
+
+## Como Executar
+
+1. **Pré-requisitos:**
+	 - Node.js (versão 18+ recomendada)
+	 - npm ou yarn
+
+2. **Instalação:**
+	 ```bash
+	 npm install
+	 # ou
+	 yarn
+	 ```
+
+3. **Execução em modo desenvolvimento:**
+	 ```bash
+	 npm run dev
+	 # ou
+	 yarn dev
+	 ```
+	 Acesse [http://localhost:5173](http://localhost:5173) no navegador.
+
+4. **Build para produção:**
+	 ```bash
+	 npm run build
+	 # ou
+	 yarn build
+	 ```
+
+5. **Preview do build:**
+	 ```bash
+	 npm run preview
+	 # ou
+	 yarn preview
+	 ```
+
+## Screenshots
+
+> Adicione aqui capturas de tela do sistema, se desejar.
+![Imagem da Página Inicial](https://i.postimg.cc/ZYj7k1Ds/evolucional-homepage.png)
+![Imagem da Página de Alunos](https://i.postimg.cc/FsBTz0vj/evolucional-studentpage.png)
+![Imagem da Página de Alunos Mostrando Gráfico de Alunos Distribuidos](https://i.postimg.cc/htVZYfFT/evolucional-studentpage-graphics.png)
+![Imagem da Página de Professores](https://i.postimg.cc/fRSB9kW1/evolucional-teacherspage.png)
+![Imagem da Página de Professores Mostrando Formulário de Novo Relacionamento](https://i.postimg.cc/KYNqZw8Y/evolucional-teacherspage-new-relationships.png)
+
+## Considerações Finais
+
+Desenvolvi este projeto priorizando eficiência, clareza e aderência ao escopo, sem exagerar em "firulas" visuais, mas sempre buscando entregar um sistema funcional, limpo e fácil de usar. Meu foco foi garantir que cada requisito fosse atendido e que o código estivesse bem organizado para facilitar futuras manutenções e evoluções. Não sou especialista em design, mas procurei entregar uma interface agradável e responsiva, alinhada ao padrão institucional.
+
+---
+
+**Autor:** João (Evonauta)
+**Blog Pessoal:** [Astral Thoughts](https://astralfracture.bearblog.dev/)
+
+---
