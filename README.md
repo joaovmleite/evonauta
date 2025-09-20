@@ -1,4 +1,3 @@
-
 # Evonauta - Desafio Técnico Evolucional
 
 Este repositório contém a minha solução para o desafio técnico da Evolucional, desenvolvido com React e Vite. Aqui, compartilho as decisões técnicas, estrutura do projeto, principais funcionalidades e instruções para execução.
@@ -10,6 +9,7 @@ Este repositório contém a minha solução para o desafio técnico da Evolucion
 - [Decisões Técnicas](#decisões-técnicas)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Validação e Segurança](#validação-e-segurança)
+- [Testes Automatizados](#testes-automatizados)
 - [Como Executar](#como-executar)
 - [Screenshots](#screenshots)
 - [Considerações Finais](#considerações-finais)
@@ -38,6 +38,7 @@ Desde o início, analisei cuidadosamente o arquivo de instruções e os dados, g
 ## Decisões Técnicas
 
 - **Stack:** React + Vite, UIKit para UI, Chart.js para gráficos, React Router para navegação.
+- **Testes unitários com Vitest:** Implementei testes unitários automatizados utilizando Vitest e Testing Library, cobrindo o componente Navbar e as principais funcionalidades das páginas do sistema. Os testes garantem que alterações futuras não quebrem funcionalidades essenciais e aumentam a confiança no desenvolvimento.
 - **Carregamento de dados:** Todos os dados são carregados via fetch dos arquivos JSON presentes em `public/data/`, centralizados no contexto global.
 - **Componentização:** Separei o código em componentes reutilizáveis, páginas e utilitários, facilitando manutenção e evolução.
 - **Validação e segurança:** Implementei validação de campos obrigatórios, sanitização de entradas (escape de HTML) e feedback imediato ao usuário.
@@ -71,6 +72,23 @@ Desde o início, analisei cuidadosamente o arquivo de instruções e os dados, g
 	- Mensagens de alerta e bloqueio de ações sempre que o usuário tenta inserir dados inválidos.
 - **Validação no fluxo de atualização do estado:**
 	- As validações são aplicadas diretamente nas funções de manipulação de estado, evitando inconsistências.
+
+## Testes Automatizados
+
+O projeto conta com testes unitários implementados com [Vitest](https://vitest.dev/) e [Testing Library](https://testing-library.com/), cobrindo componentes e funcionalidades essenciais:
+
+**Cobertura de testes:**
+  - Testes para o componente `Navbar` (verifique em `tests/components/Navbar.test.jsx`).
+  - Testes para as principais funcionalidades das páginas de Alunos e Professores (verifique em `tests/pages/Students.test.jsx` e `tests/pages/Teachers.test.jsx`).
+
+**Execução dos testes:**
+  - Para rodar todos os testes, utilize:
+    ```bash
+    npm run test
+    # ou
+    yarn test
+    ```
+  - Os testes são executados automaticamente em ambiente de desenvolvimento para garantir que as funcionalidades principais estejam sempre validadas.
 
 ## Como Executar
 
