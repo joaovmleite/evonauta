@@ -148,8 +148,16 @@ export default function Home() {
               <div className="uk-accordion-content">
                 <ul className="uk-list uk-list-bullet">
                   <li>
+                    <strong>Testes unitários automatizados:</strong><br/>
+                    Implementei testes unitários com Vitest e Testing Library para os principais componentes e páginas do sistema. Esses testes garantem que as funcionalidades essenciais continuem funcionando mesmo após futuras alterações no código, aumentando a confiança no processo de desenvolvimento.
+                  </li>
+                  <li>
+                    <strong>Por que os testes unitários são importantes?</strong><br/>
+                    Os testes automatizados permitem detectar rapidamente regressões e erros lógicos, tornando o sistema mais robusto e confiável. Assim, não dependemos apenas de testes manuais, reduzindo o risco de bugs passarem despercebidos e facilitando a evolução do projeto com segurança.
+                  </li>
+                  <li>
                     <strong>Testes manuais de fluxo:</strong><br/>
-                    Testei manualmente todas as funcionalidades principais, simulando os fluxos de uso previstos no desafio, para garantir aderência ao escopo e ausência de erros visíveis. Isso me permitiu identificar rapidamente problemas de usabilidade e lógica.
+                    Além dos testes automatizados, realizei testes manuais simulando os fluxos de uso previstos no desafio, para garantir aderência ao escopo e ausência de erros visíveis. Isso ajudou a identificar rapidamente problemas de usabilidade e lógica.
                   </li>
                   <li>
                     <strong>Validação cruzada com requisitos:</strong><br/>
@@ -161,7 +169,7 @@ export default function Home() {
                   </li>
                   <li>
                     <strong>Por que essa abordagem?</strong><br/>
-                    Escolhi a validação manual e cruzada por ser a forma mais eficiente e realista para um projeto de escopo reduzido, onde o tempo de entrega é curto e a flexibilidade é importante. Assim, garanto que o sistema entregue valor real ao usuário final e atenda exatamente ao que foi pedido.
+                    Ao combinar testes automatizados e manuais, garanto que o sistema entregue valor real ao usuário final, atenda exatamente ao que foi pedido e permaneça seguro para futuras evoluções, mesmo com prazos curtos e mudanças de escopo.
                   </li>
                 </ul>
               </div>

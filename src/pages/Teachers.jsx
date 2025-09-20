@@ -1,6 +1,8 @@
 import React, { useMemo, useState, useCallback } from 'react';
 import { useAppContext } from '../context/AppContext';
-import Modal from '../components/Modal';
+
+// Útilitario de escape para evitar XSS
+const escapeHtml = (str) => String(str).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\'':'&#39;','"':'&quot;'})[c]);
 
 function DegreeClassSelect({ degrees, classes, formDegrees, formClasses, onDegreeChange, onClassChange }) {
   return (
@@ -48,13 +50,16 @@ function RelationshipForm({ open, onClose, teachers, matters, degrees, classes, 
       setError('Todos os campos são obrigatórios.');
       return;
     }
+
     setError('');
+
     onSubmit({
       teacher: Number(teacher),
       matter: escapeHtml(matter),
       degrees: selectedDegrees,
       classes: selectedClasses
     });
+
     setTeacher('');
     setMatter('');
     setSelectedDegrees([]);
@@ -62,6 +67,7 @@ function RelationshipForm({ open, onClose, teachers, matters, degrees, classes, 
   };
 
   if (!open) return null;
+  
   return (
     <div style={{
       position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
@@ -113,6 +119,7 @@ function RelationshipForm({ open, onClose, teachers, matters, degrees, classes, 
 
 function StudentsModal({ open, onClose, degree, students, classes }) {
   if (!open) return null;
+
   return (
     <div style={{
       position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
@@ -153,16 +160,12 @@ function StudentsModal({ open, onClose, degree, students, classes }) {
 
 
 // Utilitários
-const getDegreeNames = (degreeArr, degrees) =>
-  degreeArr.map(d => degrees.find(deg => deg.id === d.degreeId)?.name || '-').join(', ');
-
 const getClassIdsForDegree = (degreeId, students) =>
   Array.from(new Set(students.filter(s => s.degreeId === degreeId).map(s => s.classId))).sort((a, b) => a - b);
 
 export default function Teachers() {
   const {
     teachers,
-    setTeachers,
     degrees,
     classes,
     matters,
@@ -350,9 +353,4 @@ export default function Teachers() {
       </div>
     </div>
   );
-}
-
-
-function escapeHtml(str) {
-  return String(str).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\'':'&#39;','"':'&quot;'})[c]);
 }
