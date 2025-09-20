@@ -84,9 +84,7 @@ O projeto conta com testes unitários implementados com [Vitest](https://vitest.
 **Execução dos testes:**
   - Para rodar todos os testes, utilize:
     ```bash
-    npm run test
-    # ou
-    yarn test
+    npx vitest run
     ```
   - Os testes são executados automaticamente em ambiente de desenvolvimento para garantir que as funcionalidades principais estejam sempre validadas.
 
