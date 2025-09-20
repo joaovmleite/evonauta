@@ -106,10 +106,10 @@ function Students() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="uk-container uk-margin-medium-top uk-margin-large-bottom">
+    <div className="uk-container uk-margin-medium-top uk-margin-large-bottom" style={{ background: '#ffff', padding: '20px', border: '1px solid #bcbcbc' }}>
       <div className="uk-width-1-1@m uk-width-2-3@l uk-align-center">
         <h2 className="uk-heading-line uk-text-center" style={{ color: '#b1040e' }}><span>Alunos</span></h2>
-        <div className="uk-flex uk-flex-between uk-flex-middle uk-margin-bottom uk-child-width-expand@s uk-grid-small" data-uk-grid>
+        <div className="uk-flex uk-flex-between uk-flex-middle uk-margin-bottom uk-child-width-expand@s uk-grid-small" data-uk-grid >
           <div>
             <select className="uk-select uk-form-width-medium uk-margin-right" value={degreeFilter} onChange={e => setDegreeFilter(e.target.value)}>
               <option value=''>Todas as séries</option>

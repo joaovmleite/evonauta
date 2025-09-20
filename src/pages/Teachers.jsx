@@ -215,7 +215,7 @@ export default function Teachers() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="uk-container uk-margin-medium-top uk-margin-large-bottom">
+    <div className="uk-container uk-margin-medium-top uk-margin-large-bottom" style={{ background: '#ffff', padding: '20px', border: '1px solid #bcbcbc' }}>
       <div
         className="uk-align-center"
         style={{
