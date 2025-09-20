@@ -57,6 +57,9 @@ Desde o início, analisei cuidadosamente o arquivo de instruções e os dados, g
 │   ├── utils/          # Funções utilitárias (fetchJson, etc)
 │   ├── App.jsx         # Componente raiz
 │   └── main.jsx        # Ponto de entrada da aplicação
+├── tests/
+│   ├── components/     # Testes para componentes (Navbar, etc)
+│   └── pages/          # Testes para páginas (Alunos, Professores, etc)
 ├── index.html          # HTML principal, inclui UIKit e fontes
 ├── package.json        # Dependências e scripts
 └── README.md           # Este arquivo
