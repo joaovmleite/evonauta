@@ -1,147 +1,147 @@
-# Evonauta - Desafio Técnico Evolucional
+# Evonauta - Desafío Técnico Evolucional
 
-Este repositório contém a minha solução para o desafio técnico da Evolucional, desenvolvido com React e Vite. Aqui, compartilho as decisões técnicas, estrutura do projeto, principais funcionalidades e instruções para execução.
+Este repositorio contiene mi solución para el desafío técnico de Evolucional, desarrollado con React y Vite. Aquí comparto las decisiones técnicas, estructura del proyecto, principales funcionalidades e instrucciones de ejecución.
 
-## Sumário
+## Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Principais Funcionalidades](#principais-funcionalidades)
-- [Decisões Técnicas](#decisões-técnicas)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Validação e Segurança](#validação-e-segurança)
-- [Testes Automatizados](#testes-automatizados)
-- [Como Executar](#como-executar)
-- [Screenshots](#screenshots)
-- [Considerações Finais](#considerações-finais)
+- [Sobre el Proyecto](#sobre-el-proyecto)
+- [Principales Funcionalidades](#principales-funcionalidades)
+- [Decisiones Técnicas](#decisiones-técnicas)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Validación y Seguridad](#validación-y-seguridad)
+- [Pruebas Automatizadas](#pruebas-automatizadas)
+- [Cómo Ejecutar](#cómo-ejecutar)
+- [Capturas de Pantalla](#capturas-de-pantalla)
+- [Consideraciones Finales](#consideraciones-finales)
 
 ---
 
-## Sobre o Projeto
+## Sobre el Proyecto
 
-O objetivo deste projeto foi criar uma aplicação web para gestão de alunos, professores, matérias, séries e turmas, utilizando dados fornecidos em arquivos JSON. Busquei entregar uma solução funcional, clara e alinhada ao escopo do desafio, priorizando organização, eficiência e experiência do usuário.
+El objetivo de este proyecto fue crear una aplicación web para la gestión de alumnos, profesores, materias, cursos y clases, utilizando datos proporcionados en archivos JSON. Busqué entregar una solución funcional, clara y alineada con el alcance del desafío, priorizando organización, eficiencia y experiencia de usuario.
 
-Desde o início, analisei cuidadosamente o arquivo de instruções e os dados, garantindo que cada funcionalidade implementada estivesse de acordo com o solicitado. Optei por React com Vite para obter performance, modularidade e facilidade de manutenção.
+Desde el inicio analicé cuidadosamente el archivo de instrucciones y los datos, asegurándome de que cada funcionalidad implementada estuviera de acuerdo con lo solicitado. Opté por React con Vite para obtener rendimiento, modularidad y facilidad de mantenimiento.
 
-## Principais Funcionalidades
+## Principales Funcionalidades
 
-- **Centralização do estado com Context API:**
-	- Utilizei o Context API do React para compartilhar dados e funções entre todas as páginas, facilitando a manutenção e evitando duplicidade de lógica.
-- **Filtros dinâmicos e geração em massa:**
-	- Implementei filtros de série e turma, além da geração em massa de alunos, para agilizar a manipulação dos dados e simular cenários reais de uso.
-- **Visualização de dados com gráficos:**
-	- Na tela de alunos, exibo um gráfico de distribuição por série, facilitando a análise visual dos dados.
-- **Relacionamentos entre professores, matérias e turmas:**
-	- Permito visualizar e editar vínculos entre professores, matérias, séries e turmas, com interface clara e uso de modais para evitar navegação excessiva.
-- **Interface moderna e responsiva:**
-	- Toda a interface foi construída com UIKit, garantindo responsividade, visual limpo e alinhamento com o padrão institucional.
+- **Centralización del estado con Context API:**
+	- Utilicé la Context API de React para compartir datos y funciones entre todas las páginas, facilitando el mantenimiento y evitando duplicación de lógica.
+- **Filtros dinámicos y generación en masa:**
+	- Implementé filtros por curso y clase, además de la generación en masa de alumnos, para agilizar la manipulación de datos y simular escenarios reales de uso.
+- **Visualización de datos con gráficos:**
+	- En la pantalla de alumnos se muestra un gráfico de distribución por curso, facilitando el análisis visual de los datos.
+- **Relaciones entre profesores, materias y clases:**
+	- Se pueden visualizar y editar vínculos entre profesores, materias, cursos y clases, con una interfaz clara y uso de modales para evitar navegación excesiva.
+- **Interfaz moderna y responsiva:**
+	- Toda la interfaz fue construida con UIKit, garantizando adaptabilidad, diseño limpio y alineación con el estándar institucional.
 
-## Decisões Técnicas
+## Decisiones Técnicas
 
-- **Stack:** React + Vite, UIKit para UI, Chart.js para gráficos, React Router para navegação.
-- **Testes unitários com Vitest:** Implementei testes unitários automatizados utilizando Vitest e Testing Library, cobrindo o componente Navbar e as principais funcionalidades das páginas do sistema. Os testes garantem que alterações futuras não quebrem funcionalidades essenciais e aumentam a confiança no desenvolvimento.
-- **Carregamento de dados:** Todos os dados são carregados via fetch dos arquivos JSON presentes em `public/data/`, centralizados no contexto global.
-- **Componentização:** Separei o código em componentes reutilizáveis, páginas e utilitários, facilitando manutenção e evolução.
-- **Validação e segurança:** Implementei validação de campos obrigatórios, sanitização de entradas (escape de HTML) e feedback imediato ao usuário.
-- **Responsividade:** Usei classes do UIKit e ajustes de layout para garantir boa visualização em diferentes tamanhos de tela.
+- **Stack:** React + Vite, UIKit para UI, Chart.js para gráficos, React Router para navegación.
+- **Pruebas unitarias con Vitest:** Implementé pruebas unitarias automatizadas con Vitest y Testing Library, cubriendo el componente Navbar y las principales funcionalidades de las páginas del sistema. Las pruebas aseguran que cambios futuros no rompan funcionalidades esenciales y aumentan la confianza en el desarrollo.
+- **Carga de datos:** Todos los datos se cargan mediante fetch desde los archivos JSON ubicados en `public/data/`, centralizados en el contexto global.
+- **Componentización:** Separé el código en componentes reutilizables, páginas y utilidades, facilitando mantenimiento y evolución.
+- **Validación y seguridad:** Implementé validación de campos obligatorios, sanitización de entradas (escape de HTML) y retroalimentación inmediata al usuario.
+- **Responsividad:** Usé clases de UIKit y ajustes de layout para garantizar una buena visualización en diferentes tamaños de pantalla.
 
-## Estrutura do Projeto
+## Estructura del Proyecto
 
 ```
 ├── public/
-│   └── data/           # Arquivos JSON de dados (alunos, professores, etc)
+│   └── data/           # Archivos JSON de datos (alumnos, profesores, etc.)
 ├── src/
-│   ├── assets/         # Assets estáticos (CSS, JS, imagens)
-│   ├── components/     # Componentes reutilizáveis (Navbar, Modal, etc)
+│   ├── assets/         # Recursos estáticos (CSS, JS, imágenes)
+│   ├── components/     # Componentes reutilizables (Navbar, Modal, etc.)
 │   ├── context/        # Contexto global (AppContext)
-│   ├── pages/          # Páginas principais (Home, Alunos, Professores)
-│   ├── utils/          # Funções utilitárias (fetchJson, etc)
+│   ├── pages/          # Páginas principales (Home, Alumnos, Profesores)
+│   ├── utils/          # Funciones utilitarias (fetchJson, etc.)
 │   ├── App.jsx         # Componente raiz
-│   └── main.jsx        # Ponto de entrada da aplicação
+│   └── main.jsx        # Punto de entrada de la aplicación
 ├── tests/
-│   ├── components/     # Testes para componentes (Navbar, etc)
-│   └── pages/          # Testes para páginas (Alunos, Professores, etc)
-├── index.html          # HTML principal, inclui UIKit e fontes
-├── package.json        # Dependências e scripts
-└── README.md           # Este arquivo
+│   ├── components/     # Pruebas para componentes (Navbar, etc.)
+│   └── pages/          # Pruebas para páginas (Alumnos, Profesores, etc.)
+├── index.html          # HTML principal, incluye UIKit y fuentes
+├── package.json        # Dependencias y scripts
+└── README.md           # Este archivo
 ```
 
-## Validação e Segurança
+## Validación y Seguridad
 
-- **Validação de campos obrigatórios:**
-	- Todos os formulários e campos editáveis impedem o envio de dados vazios ou inválidos.
-- **Sanitização contra XSS:**
-	- Todas as entradas do usuário são sanitizadas com escape de HTML antes de salvar ou exibir dados.
-- **Feedback imediato:**
-	- Mensagens de alerta e bloqueio de ações sempre que o usuário tenta inserir dados inválidos.
-- **Validação no fluxo de atualização do estado:**
-	- As validações são aplicadas diretamente nas funções de manipulação de estado, evitando inconsistências.
+- **Validación de campos obligatorios:**
+	- Todos los formularios y campos editables evitan el envío de datos vacíos o inválidos.
+- **Sanitización contra XSS:**
+	- Todas las entradas del usuario se sanitizan con escape de HTML antes de guardarlas o mostrarlas.
+- **Retroalimentación inmediata:**
+	- Mensajes de alerta y bloqueo de acciones siempre que el usuario intente ingresar datos inválidos.
+- **Validación en el flujo de actualización del estado:**
+	- Las validaciones se aplican directamente en las funciones de manipulación de estado, evitando inconsistencias.
 
-## Testes Automatizados
+## Pruebas Automatizadas
 
-O projeto conta com testes unitários implementados com [Vitest](https://vitest.dev/) e [Testing Library](https://testing-library.com/), cobrindo componentes e funcionalidades essenciais:
+El proyecto cuenta con pruebas unitarias implementadas con [Vitest](https://vitest.dev/) y [Testing Library](https://testing-library.com/), cubriendo componentes y funcionalidades esenciales:
 
-**Cobertura de testes:**
-  - Testes para o componente `Navbar` (verifique em `tests/components/Navbar.test.jsx`).
-  - Testes para as principais funcionalidades das páginas de Alunos e Professores (verifique em `tests/pages/Students.test.jsx` e `tests/pages/Teachers.test.jsx`).
+**Cobertura de pruebas:**
+  - Pruebas para el componente `Navbar` (ver en `tests/components/Navbar.test.jsx`).
+  - Pruebas para las principales funcionalidades de las páginas de Alumnos y Profesores (ver en `tests/pages/Students.test.jsx` y `tests/pages/Teachers.test.jsx`).
 
-**Execução dos testes:**
-  - Para rodar todos os testes, utilize:
+**Ejecución de pruebas:**
+  - Para ejecutar todas las pruebas, use:
     ```bash
     npx vitest run
     ```
-  - Os testes são executados automaticamente em ambiente de desenvolvimento para garantir que as funcionalidades principais estejam sempre validadas.
+  - Las pruebas se ejecutan automáticamente en el entorno de desarrollo para asegurar que las funcionalidades principales siempre estén validadas.
 
-## Como Executar
+## Cómo Ejecutar
 
-1. **Pré-requisitos:**
-	 - Node.js (versão 18+ recomendada)
-	 - npm ou yarn
+1. **Requisitos previos:**
+	 - Node.js (versión 18+ recomendada)
+	 - npm o yarn
 
-2. **Instalação:**
+2. **Instalación:**
 	 ```bash
 	 npm install
-	 # ou
+	 # o
 	 yarn
 	 ```
 
-3. **Execução em modo desenvolvimento:**
+3. **Ejecución en modo desarrollo:**
 	 ```bash
 	 npm run dev
-	 # ou
+	 # o
 	 yarn dev
 	 ```
-	 Acesse [http://localhost:5173](http://localhost:5173) no navegador.
+	 Acceda a [http://localhost:5173](http://localhost:5173) en el navegador.
 
-4. **Build para produção:**
+4. **Build para producción:**
 	 ```bash
 	 npm run build
-	 # ou
+	 # o
 	 yarn build
 	 ```
 
-5. **Preview do build:**
+5. **Preview del build:**
 	 ```bash
 	 npm run preview
-	 # ou
+	 # o
 	 yarn preview
 	 ```
 
-## Screenshots
+## Capturas de Pantalla
 
-> Adicione aqui capturas de tela do sistema, se desejar.
-![Imagem da Página Inicial](https://i.postimg.cc/ZYj7k1Ds/evolucional-homepage.png)
-![Imagem da Página de Alunos](https://i.postimg.cc/FsBTz0vj/evolucional-studentpage.png)
-![Imagem da Página de Alunos Mostrando Gráfico de Alunos Distribuidos](https://i.postimg.cc/htVZYfFT/evolucional-studentpage-graphics.png)
-![Imagem da Página de Professores](https://i.postimg.cc/fRSB9kW1/evolucional-teacherspage.png)
-![Imagem da Página de Professores Mostrando Formulário de Novo Relacionamento](https://i.postimg.cc/KYNqZw8Y/evolucional-teacherspage-new-relationships.png)
+> Agregue aquí capturas de pantalla del sistema, si lo desea.
+![Imagen de la Página de Inicio](https://i.postimg.cc/ZYj7k1Ds/evolucional-homepage.png)  
+![Imagen de la Página de Alumnos](https://i.postimg.cc/FsBTz0vj/evolucional-studentpage.png)  
+![Imagen de la Página de Alumnos con Gráfico de Distribución](https://i.postimg.cc/htVZYfFT/evolucional-studentpage-graphics.png)  
+![Imagen de la Página de Profesores](https://i.postimg.cc/fRSB9kW1/evolucional-teacherspage.png)  
+![Imagen de la Página de Profesores mostrando Formulario de Nuevo Relacionamiento](https://i.postimg.cc/KYNqZw8Y/evolucional-teacherspage-new-relationships.png)
 
-## Considerações Finais
+## Consideraciones Finales
 
-Desenvolvi este projeto priorizando eficiência, clareza e aderência ao escopo, sem exagerar em "firulas" visuais, mas sempre buscando entregar um sistema funcional, limpo e fácil de usar. Meu foco foi garantir que cada requisito fosse atendido e que o código estivesse bem organizado para facilitar futuras manutenções e evoluções. Não sou especialista em design, mas procurei entregar uma interface agradável e responsiva, alinhada ao padrão institucional.
+Desarrollé este proyecto priorizando eficiencia, claridad y adherencia al alcance del desafío, sin exagerar en aspectos visuales, pero siempre buscando entregar un sistema funcional, limpio y fácil de usar. Mi enfoque fue asegurar que cada requisito estuviera cubierto y que el código estuviera bien organizado para facilitar mantenimientos y evoluciones futuras. No soy especialista en diseño, pero procuré ofrecer una interfaz agradable y responsiva, alineada con el estándar institucional.
 
 ---
 
-**Autor:** João (Evonauta)
-**Blog Pessoal:** [Astral Thoughts](https://astralfracture.bearblog.dev/)
+**Autor:** João (Evonauta)  
+**Blog Personal:** [Astral Thoughts](https://astralfracture.bearblog.dev/)
 
 ---
