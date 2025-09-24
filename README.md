@@ -91,7 +91,7 @@ O projeto conta com testes unitários implementados com [Vitest](https://vitest.
 		```
 	- Os testes são executados automaticamente no ambiente de desenvolvimento para garantir que as funcionalidades principais estejam sempre validadas.
 
-## Cómo Ejecutar
+## Como executar
 
 1. **Requisitos prévios:**
 	- Node.js (versão 18+ recomendada)
